@@ -13,7 +13,9 @@
 
 /* ===== 1200px 이하 ===== */
 @media screen and (max-width: 1200px) {
-  
+  .container {
+    padding: 0 20px;
+  }
   .main-banner {
     width: 100%;
     height: auto;
@@ -28,7 +30,19 @@
     flex-direction: column;
     text-align: center;
   }
-   
+
+  .structure-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chose-box-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
 }
 
 /* ===== 1024px 이하 (태블릿) ===== */
@@ -41,11 +55,32 @@
   .process-intro {
     width: 100%;
   }
+
+  .how-card-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .structure-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chose-box-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 
 /* ===== 768px 이하 (모바일 큰 화면) ===== */
 @media screen and (max-width: 768px){
+  .container {
+    padding: 0 40px;
+  }
   .section-title {
     font-size: calc(var(--default-FZ)*1.75);
   }   
@@ -107,6 +142,24 @@
   
   .intro-wrap span {
     font-weight: 500;
+  }
+
+  .how-card-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .structure-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chose-box-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -180,6 +233,20 @@
   
   .intro-wrap span {
     font-weight: 500;
+  }
+
+
+
+  .how-card-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .structure-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .next-btn {
