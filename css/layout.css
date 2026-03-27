@@ -1,0 +1,413 @@
+/* 1920px - 공통 CSS */
+.container{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+/* === 공통 타이틀 + 여백 === */
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    position: static;
+    /* margin: 80px auto 0; */
+}
+
+.section-title {
+    /* font-size: 32px; */
+    font-size: calc(var(--default-FZ)*2);
+    font-weight: 600;
+    color: #5642F1;
+}
+
+.section-header p {
+    /* font-size: 16px; */
+    font-size: var(--default-FZ);
+    font-weight: 500;
+}
+
+.section-header p > span {
+    color: #5642F1;
+}
+
+
+/* 햄버거 메뉴 */
+#mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(80%, 320px);
+  /* max-width: 280px; */
+  height: 100%;
+  background: #fff;
+
+  display: flex;
+  flex-direction: column;
+  /* padding: 24px; */
+  
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+
+  z-index: 1001;
+
+}
+
+#mobile-nav header {
+  padding: 0 0.875rem; 
+}
+
+/* 메뉴 open */
+body.menu_active #mobile-nav {
+  transform: translateX(0);
+}
+
+body.menu_active {
+  overflow: hidden;
+}
+
+/* 메뉴 리스트 */
+#mobile-nav nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#mobile-nav nav li {
+  border-bottom: 1px solid #222;
+}
+
+#mobile-nav nav ul li:hover {
+  background: #5f4de9;
+}
+
+#mobile-nav nav ul li:hover a {
+  color: #fff;
+}
+
+#mobile-nav nav a {
+  font-size: calc(var(--default-FZ)*1.25);
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  display: block;
+
+  transition: 0.2s;
+}
+
+/* 오버레이 */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: var(--Blur, rgba(210, 210, 215, 0.45));
+  backdrop-filter: blur(3px);
+  
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s;
+
+  z-index: 1000;
+}
+
+/* 오버레이 - open */
+body.menu_active .menu-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* hover 효과 */
+#mobile-nav nav a:hover {
+  color: #6C5CE7; /* 포인트 컬러 */
+}
+
+
+#mobile-nav nav {
+  flex: 1;
+}
+
+#mobile-nav nav ul li {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  font-size: 21px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--black);
+}
+
+#mobile-nav #close {
+  display: none;
+  background: none;
+  border: none;
+}
+
+/* 레이아웃 */
+
+/* ====== Topbar ====== */
+header {
+  width: 100%;
+  height: 100px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+header .mobile {
+  width: 40px;
+  height: 40px;
+}
+
+header .mobile > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* header .mobile {
+  display: none;
+} */
+
+.topbar-inner {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 72px 1fr 72px;
+  align-items: center;
+  padding: 0 0.875rem;
+}
+
+/* 좌우 동일폭 */
+.topbar-slot{
+  /* flex: 0 0 72px; */
+  display: flex;
+  align-items: center;
+}
+
+.topbar-logo{
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-mark{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 22px; */
+  font-size: calc(var(--default-FZ)*1.375);
+}
+
+/* ====== Center Nav ====== */
+.pc-nav{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+ul.nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  /* gap: 36px; */
+  gap: 2.25rem;
+  /* margin: 0;
+  padding: 0; */
+}
+
+.nav-link{
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* gap: 8px; */
+  gap: 0.5rem;
+
+  /* aspect-ratio: 1 / 1; */
+  /* font-size: 18px; */
+  font-size: calc(var(--default-FZ)*1.125);
+  font-weight: 700;
+  line-height: 1;
+  color: #27262F;
+
+  /* 부드러운 컬러 전환 */
+  transition: color 0.25s ease;
+}
+
+.nav-link.is-active{
+  color: #6C5AF4;
+}
+
+.nav-dot{
+  display: inline-block;   /* 추가 ⭐ 핵심 */
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  background-color: #6C5AF4;
+  
+  border-radius: 50%;
+
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.nav-link.is-active .nav-dot{
+  opacity: 1;
+  /* transform: scale(1); */
+}
+
+
+/* === Where It Starts 섹션 === */
+.process-intro {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 456px;
+    background-color: #fff;
+    position: relative;
+}
+
+.intro-wrap {
+    position: static;
+    /* margin: 120px auto 0; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 40px; */
+    gap: 2.5rem;
+}
+
+.intro-wrap p > span {
+    font-weight: 600;
+}
+
+.process-title {
+  /* font-size: 32px; */
+  font-size: calc(var(--default-FZ)*2);
+  font-weight: 600;
+  color: #6C5AF4;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+/* 오른쪽 설명 */
+.process-intro p{
+  max-width: 900px;
+  /* font-size: 16px; */
+  font-size: var(--default-FZ);
+  line-height: calc(var(--default-LH)*0.75);
+  color: #333;
+}
+
+
+/* How I Decide 섹션 */
+.how-decide {
+    width: 100%;
+    padding: 5rem 0 7.5rem;
+    background-color: #FBFAFF;
+    position: relative;
+}
+
+/* 아이덴티티 - 카드 UI */
+.how-card-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 124px;
+}
+
+.how-card {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    min-height: 360px;
+    padding: 24px 24px;
+    background-color: #fff;
+    box-shadow: 0 0 14px 1px #E8E4F8;
+    border-radius: 15px;
+    position: relative;
+}
+
+.how-card img {
+    position: absolute;
+    left: 0;
+    right: 0; 
+    top: 140px;
+}
+
+.how-card p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 34px;
+    font-weight: 300;
+}
+
+.how-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-weight: 600;
+}
+
+.how-col span {
+    font-size: calc(var(--default-FZ)*1.5);
+}
+
+.how-col h3 {
+    font-size: calc(var(--default-FZ)*1.125);
+    color: #8573F7;
+}
+
+/* How Structure Emerges 섹션 */
+.how-emerges {
+    width: 100%;
+    padding: 5rem 0 7.5rem;
+    background-color: #fff;
+    position: relative;
+}
+
+
+
+/* What I Chose to Leave Out 섹션 */
+.what-leave {
+    width: 100%;
+    padding: 5rem 0 7.5rem;
+    background-color: #fff;
+    position: relative;
+}
+
+
+
+/* What This Process Reveals 섹션 */
+.what-process {
+    width: 100%;
+    padding: 5rem 0 7.5rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.what-process span {
+    margin-top: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
