@@ -354,7 +354,7 @@ ul.nav {
 }
 
 .how-card p {
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .how-col {
@@ -369,8 +369,14 @@ ul.nav {
 }
 
 .how-col h3 {
+    display: inline;
+    background: linear-gradient(
+      to top,
+      rgba(233, 231, 255) 38%,
+      transparent 38%
+    );
     font-size: calc(var(--default-FZ)*1.125);
-    color: #8573F7;
+    color: #27262F;
 }
 
 /* How Structure Emerges 섹션 */
