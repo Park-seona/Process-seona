@@ -1,7 +1,7 @@
 /* ===== (PC -> Tablet까지) 768px 이후 ~ ===== */
 @media screen and (min-width: 768px) {
   .mobile_menu_toggle {
-       display: none;
+      display: none;
   }
   
   #mobile-nav,

@@ -350,7 +350,7 @@ ul.nav {
 
 .how-card img {
     position: static;
-    max-width: 188px;
+    width: auto;
 }
 
 .how-card p {
